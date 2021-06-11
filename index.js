@@ -247,17 +247,16 @@ Use get20s to do the following:
 Example born in 1901 and died in 1959 - included -- born in 1889 and died in 1925 not included
 If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 
-function get20s(artists){ 
-let paintings = [];
-for (let i = 0; i < artists.length; i++){
-  let birth = (artists[i].years);
-  if (birth >= 1900){
-    paintings.push(artists[i].name)
+function get20s(array){
+  let newArray = [];
+  for(let i = 0; i < array.length; i++){
+    if(array[i].years >= "1900" && array[i].years <= "2000"){
+      newArray.push(array[i].name);
+    }
   }
+  return newArray;
 }
-return paintings
-}
-
+console.log('Task 4', get20s(artists));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -306,17 +305,15 @@ Use lotsOfArt to do the following:
 2. Return an array with names of artists in the received array who painted more than 100 paintings.
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]*/
 
-function lotsOfArt(artists){
-let paintings = [];
-for (let i = 0; i < artists.length; i++){
-  if (artists.paintings < 100){
-    paintings.push(artists.name)
-  }
+function lotsOfArt(arr){
+  let Over100 = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].paintings > 100) {
+      Over100.push(arr[i].name);
+    } 
+  } 
+  return Over100;
 }
-return paintings
-}
-
-
 
 
 // 🎨🎨 STRETCH 🎨🎨//
